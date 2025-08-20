@@ -1,0 +1,68 @@
+Lp/* src/Pages/Home.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  color: #333;
+}
+
+/* Main container for homepage content */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Heading styles */
+.home-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* Subheading or description */
+.home-container p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Buttons section */
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-buttons a {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.home-buttons .btn-primary {
+  background-color: #4cafef;
+  color: white;
+}
+
+.home-buttons .btn-primary:hover {
+  background-color: #3a9ad9;
+}
+
+.home-buttons .btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.home-buttons .btn-secondary:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>My Dashboard</h1>
+        <button id="logoutBtn">Logout</button>
+    </nav>
+
+    <main class="content">
+        <section class="welcome">
+            <h2>Welcome, <span id="userName">User</span>!</h2>
+            <p>This is your personal dashboard.</p>
+        </section>
+
+        <section class="stats">
+            <div class="card">📊 Analytics</div>
+            <div class="card">📅 Calendar</div>
+            <div class="card">📂 Files</div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
