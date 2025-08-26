@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from './firebase'; // import your firebase auth
-import "./Login.css";
+import { auth } from './firebase';
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,27 +11,24 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // reset previous errors
+    setError("");
 
     try {
-      // Sign in using Firebase Authentication
       await signInWithEmailAndPassword(auth, email, password);
-      // If successful, redirect to dashboard
       navigate("/dashboard");
     } catch (err) {
-      // Show error if login fails
       setError(err.message);
     }
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h2>Login</h2>
+    <div className="min-h-[60vh] grid place-items-center">
+      <form className="w-full max-w-md rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-lg" onSubmit={handleLogin}>
+        <h2 className="text-2xl font-bold text-center">Login</h2>
 
-        {error && <p className="error">{error}</p>}
+        {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className="mt-4 block text-sm font-medium">Email</label>
         <input
           type="email"
           id="email"
@@ -40,9 +36,10 @@ export default function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 outline-none focus:ring-2 focus:ring-brand"
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className="mt-4 block text-sm font-medium">Password</label>
         <input
           type="password"
           id="password"
@@ -50,13 +47,14 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 outline-none focus:ring-2 focus:ring-brand"
         />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="mt-6 w-full rounded-lg bg-brand text-white font-semibold py-2.5 hover:brightness-95">Login</button>
 
-        <div className="signup-link">
-          <p>
-            Don't have an account? <a href="/signup">Sign up</a>
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            Don't have an account? <a href="/signup" className="text-brand font-medium">Sign up</a>
           </p>
         </div>
       </form>
